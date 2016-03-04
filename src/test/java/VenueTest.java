@@ -13,13 +13,13 @@ public class VenueTest {
     assertEquals(Venue.all().size(), 0);
   }
 
-  // @Test
-  // public void equals_returnsTrueIfDescriptionsAretheSame() {
-  //   Venue firstVenue = new Venue("Modacenter");
-  //   Venue secondVenue = new Venue("Modacenter");
-  //   assertTrue(firstVenue.equals(secondVenue));
-  // }
-  //
+  @Test
+  public void equals_returnsTrueIfDescriptionsAretheSame() {
+    Venue firstVenue = new Venue("Modacenter");
+    Venue secondVenue = new Venue("Modacenter");
+    assertTrue(firstVenue.equals(secondVenue));
+  }
+
   // @Test
   // public void save_savesObjectIntoDatabase() {
   //   Venue myVenue = new Venue("Modacenter");
