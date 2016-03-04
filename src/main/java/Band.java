@@ -40,16 +40,16 @@ public class Band {
   //   this.name = WordUtils.capitalize(this.name.toLowerCase());
   // }
   //
-  // public void save() {
-  //   try(Connection con = DB.sql2o.open()) {
-  //     String sql = "INSERT INTO bands (name) VALUES (:name)";
-  //     this.id = (int) con.createQuery(sql, true)
-  //       .addParameter("name", this.name)
-  //       .executeUpdate()
-  //       .getKey();
-  //   }
-  // }
-  //
+  public void save() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO bands (name) VALUES (:name)";
+      this.id = (int) con.createQuery(sql, true)
+        .addParameter("name", this.name)
+        .executeUpdate()
+        .getKey();
+    }
+  }
+
   // public void update(String name) {
   //   try(Connection con = DB.sql2o.open()) {
   //     String sql = "UPDATE bands SET name = :name WHERE id = :id";
