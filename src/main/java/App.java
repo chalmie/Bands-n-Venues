@@ -54,7 +54,7 @@ public class App {
       model.put("venues", Venue.all());
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-  
+
     post("/band/update/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       int id = Integer.parseInt(request.params("id"));
@@ -68,19 +68,18 @@ public class App {
       return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
 
-  //   post("/band/update/name/:id", (request, response) -> {
-  //     HashMap<String, Object> model = new HashMap<String, Object>();
-  //     int id = Integer.parseInt(request.params("id"));
-  //     Band myBand = Band.find(id);
-  //     String inputName = request.queryParams("name");
-  //     myBand.update(inputName);
-  //     model.put("band", myBand);
-  //     model.put("venues", Venue.all());
-  //     response.redirect("/");
-  //     return null;
-  //   });
-  //
-  //
+    post("/band/update/name/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      int id = Integer.parseInt(request.params("id"));
+      Band myBand = Band.find(id);
+      String inputName = request.queryParams("name");
+      myBand.update(inputName);
+      model.put("band", myBand);
+      model.put("venues", Venue.all());
+      response.redirect("/");
+      return null;
+    });
+  
   //   post("/band/delete/:id", (request, response) -> {
   //     HashMap<String, Object> model = new HashMap<String, Object>();
   //     int id = Integer.parseInt(request.params("id"));
