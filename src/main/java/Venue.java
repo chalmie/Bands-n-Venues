@@ -100,21 +100,21 @@ public class Venue {
       return bands;
     }
   }
-//
-//   public void delete() {
-//     try(Connection con = DB.sql2o.open()) {
-//       String deleteQuery = "DELETE FROM venues WHERE id = :id;";
-//         con.createQuery(deleteQuery)
-//           .addParameter("id", id)
-//           .executeUpdate();
-//
-//       String joinDeleteQuery = "DELETE FROM bands_venues WHERE venue_id = :venueId";
-//         con.createQuery(joinDeleteQuery)
-//           .addParameter("venueId", this.getId())
-//           .executeUpdate();
-//     }
-//   }
-//
+
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteQuery = "DELETE FROM venues WHERE id = :id;";
+        con.createQuery(deleteQuery)
+          .addParameter("id", id)
+          .executeUpdate();
+
+      String joinDeleteQuery = "DELETE FROM bands_venues WHERE venue_id = :venueId";
+        con.createQuery(joinDeleteQuery)
+          .addParameter("venueId", this.getId())
+          .executeUpdate();
+    }
+  }
+
 //   public void deleteAll() {
 //     try(Connection con = DB.sql2o.open()) {
 //       String deleteQuery = "DELETE FROM venues;";
