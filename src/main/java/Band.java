@@ -35,11 +35,11 @@ public class Band {
       return this.getName().equals(newBand.getName());
     }
   }
-  //
-  // public void firstToUppercase() {
-  //   this.name = WordUtils.capitalize(this.name.toLowerCase());
-  // }
-  //
+  
+  public void firstToUppercase() {
+    this.name = WordUtils.capitalize(this.name.toLowerCase());
+  }
+
   public void save() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO bands (name) VALUES (:name)";
