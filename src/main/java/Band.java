@@ -106,23 +106,23 @@ public class Band {
     }
   }
 
-  // public ArrayList<Venue> getVenues() {
-  //   try(Connection con = DB.sql2o.open()){
-  //     String sql = "SELECT venue_id FROM bands_venues WHERE band_id = :band_id";
-  //     List<Integer> venueIds = con.createQuery(sql)
-  //       .addParameter("band_id", this.getId())
-  //       .executeAndFetch(Integer.class);
-  //
-  //     ArrayList<Venue> venues = new ArrayList<Venue>();
-  //
-  //     for (Integer venueId : venueIds) {
-  //         String venueQuery = "SELECT * FROM venues WHERE id = :venueId";
-  //         Venue venue = con.createQuery(venueQuery)
-  //           .addParameter("venueId", venueId)
-  //           .executeAndFetchFirst(Venue.class);
-  //         venues.add(venue);
-  //     }
-  //     return venues;
-  //   }
-  // }
+  public ArrayList<Venue> getVenues() {
+    try(Connection con = DB.sql2o.open()){
+      String sql = "SELECT venue_id FROM bands_venues WHERE band_id = :band_id";
+      List<Integer> venueIds = con.createQuery(sql)
+        .addParameter("band_id", this.getId())
+        .executeAndFetch(Integer.class);
+
+      ArrayList<Venue> venues = new ArrayList<Venue>();
+
+      for (Integer venueId : venueIds) {
+          String venueQuery = "SELECT * FROM venues WHERE id = :venueId";
+          Venue venue = con.createQuery(venueQuery)
+            .addParameter("venueId", venueId)
+            .executeAndFetchFirst(Venue.class);
+          venues.add(venue);
+      }
+      return venues;
+    }
+  }
 }
