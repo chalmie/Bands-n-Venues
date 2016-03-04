@@ -26,15 +26,15 @@ public class Band {
     }
   }
 
-  // @Override
-  // public boolean equals(Object otherBand){
-  //   if (!(otherBand instanceof Band)) {
-  //     return false;
-  //   } else {
-  //     Band newBand = (Band) otherBand;
-  //     return this.getName().equals(newBand.getName());
-  //   }
-  // }
+  @Override
+  public boolean equals(Object otherBand){
+    if (!(otherBand instanceof Band)) {
+      return false;
+    } else {
+      Band newBand = (Band) otherBand;
+      return this.getName().equals(newBand.getName());
+    }
+  }
   //
   // public void firstToUppercase() {
   //   this.name = WordUtils.capitalize(this.name.toLowerCase());
