@@ -11,14 +11,14 @@ public class App {
     staticFileLocation("/public/");
     String layout = "templates/layout.vtl";
 
-  //   get("/", (request, response) -> {
-  //     HashMap<String, Object> model = new HashMap<String, Object>();
-  //     model.put("template", "templates/index.vtl");
-  //     model.put("bands", Band.all());
-  //     model.put("venues", Venue.all());
-  //     return new ModelAndView(model, layout);
-  //   }, new VelocityTemplateEngine());
-  //
+    get("/", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/index.vtl");
+      model.put("bands", Band.all());
+      model.put("venues", Venue.all());
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   //   post("/add/band", (request, response) -> {
   //     HashMap<String, Object> model = new HashMap<String, Object>();
   //     String inputName = request.queryParams("name");
