@@ -71,15 +71,15 @@ public class Venue {
     this.name = WordUtils.capitalize(this.name.toLowerCase());
   }
 
-  // public void addBand(Band band) {
-  //   try(Connection con = DB.sql2o.open()) {
-  //     String sql = "INSERT INTO bands_venues (band_id, venue_id) VALUES (:band_id, :venue_id)";
-  //     con.createQuery(sql)
-  //       .addParameter("band_id", band.getId())
-  //       .addParameter("venue_id", this.getId())
-  //       .executeUpdate();
-  //   }
-  // }
+  public void addBand(Band band) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO bands_venues (band_id, venue_id) VALUES (:band_id, :venue_id)";
+      con.createQuery(sql)
+        .addParameter("band_id", band.getId())
+        .addParameter("venue_id", this.getId())
+        .executeUpdate();
+    }
+  }
 
   // public ArrayList<Band> getBands() {
   //   try(Connection con = DB.sql2o.open()){
