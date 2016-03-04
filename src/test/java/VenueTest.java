@@ -44,15 +44,15 @@ public class VenueTest {
     assertTrue(myVenue.equals(savedVenue));
   }
 
-  // @Test
-  // public void firstToUppercase_makesFirstLetterUppercase_true() {
-  //   Venue myVenue = new Venue("modacenter");
-  //   myVenue.firstToUppercase();
-  //   myVenue.save();
-  //   Venue savedVenue = Venue.all().get(0);
-  //   assertEquals(savedVenue.getName(), "Modacenter");
-  // }
-  //
+  @Test
+  public void firstToUppercase_makesFirstLetterUppercase_true() {
+    Venue myVenue = new Venue("modacenter");
+    myVenue.firstToUppercase();
+    myVenue.save();
+    Venue savedVenue = Venue.all().get(0);
+    assertEquals(savedVenue.getName(), "Modacenter");
+  }
+
   // @Test
   // public void addBand_addsBandToVenue() {
   //   Band myBand = new Band("Brand New");
