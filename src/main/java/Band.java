@@ -86,16 +86,16 @@ public class Band {
   //   }
   // }
   //
-  // public static Band find(int id) {
-  //   try(Connection con = DB.sql2o.open()) {
-  //     String sql = "SELECT * FROM bands where id=:id";
-  //     Band band = con.createQuery(sql)
-  //       .addParameter("id", id)
-  //       .executeAndFetchFirst(Band.class);
-  //     return band;
-  //   }
-  // }
-  //
+  public static Band find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM bands where id=:id";
+      Band band = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(Band.class);
+      return band;
+    }
+  }
+
   // public void addVenue(Venue venue) {
   //   try(Connection con = DB.sql2o.open()) {
   //     String sql = "INSERT INTO bands_venues (band_id, venue_id) VALUES (:band_id, :venue_id)";
