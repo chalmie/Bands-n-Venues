@@ -74,18 +74,18 @@ public class Band {
     }
   }
 
-  // public void deleteAll() {
-  //   try(Connection con = DB.sql2o.open()) {
-  //     String deleteQuery = "DELETE FROM bands;";
-  //       con.createQuery(deleteQuery)
-  //         .executeUpdate();
-  //
-  //     String joinDeleteQuery = "DELETE FROM bands_venues WHERE band_id > 0";
-  //       con.createQuery(joinDeleteQuery)
-  //         .executeUpdate();
-  //   }
-  // }
-  //
+  public void deleteAll() {
+    try(Connection con = DB.sql2o.open()) {
+      String deleteQuery = "DELETE FROM bands;";
+        con.createQuery(deleteQuery)
+          .executeUpdate();
+
+      String joinDeleteQuery = "DELETE FROM bands_venues WHERE band_id > 0";
+        con.createQuery(joinDeleteQuery)
+          .executeUpdate();
+    }
+  }
+
   public static Band find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM bands where id=:id";

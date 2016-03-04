@@ -61,7 +61,7 @@ public class BandTest {
   //   List savedVenues = myBand.getVenues();
   //   assertEquals(savedVenues.size(), 1);
   // }
-  //
+  // 
   // @Test
   // public void delete_deletesAllVenuesAndListsAssoicationes() {
   //   Band myBand = new Band("Household chores");
