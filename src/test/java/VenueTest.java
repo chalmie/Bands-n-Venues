@@ -36,14 +36,14 @@ public class VenueTest {
     assertEquals(myVenue.getId(), savedVenue.getId());
   }
 
-  // @Test
-  // public void find_findsVenueInDatabase_true() {
-  //   Venue myVenue = new Venue("Modacenter");
-  //   myVenue.save();
-  //   Venue savedVenue = Venue.find(myVenue.getId());
-  //   assertTrue(myVenue.equals(savedVenue));
-  // }
-  //
+  @Test
+  public void find_findsVenueInDatabase_true() {
+    Venue myVenue = new Venue("Modacenter");
+    myVenue.save();
+    Venue savedVenue = Venue.find(myVenue.getId());
+    assertTrue(myVenue.equals(savedVenue));
+  }
+
   // @Test
   // public void firstToUppercase_makesFirstLetterUppercase_true() {
   //   Venue myVenue = new Venue("modacenter");
