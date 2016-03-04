@@ -71,35 +71,35 @@ public class Venue {
     this.name = WordUtils.capitalize(this.name.toLowerCase());
   }
 
-//   public void addBand(Band band) {
-//     try(Connection con = DB.sql2o.open()) {
-//       String sql = "INSERT INTO bands_venues (band_id, venue_id) VALUES (:band_id, :venue_id)";
-//       con.createQuery(sql)
-//         .addParameter("band_id", band.getId())
-//         .addParameter("venue_id", this.getId())
-//         .executeUpdate();
-//     }
-//   }
-//
-//   public ArrayList<Band> getBands() {
-//     try(Connection con = DB.sql2o.open()){
-//       String sql = "SELECT band_id FROM bands_venues WHERE venue_id = :venue_id";
-//       List<Integer> bandIds = con.createQuery(sql)
-//         .addParameter("venue_id", this.getId())
-//         .executeAndFetch(Integer.class);
-//
-//       ArrayList<Band> bands = new ArrayList<Band>();
-//
-//       for (Integer bandId : bandIds) {
-//           String venueQuery = "Select * From bands WHERE id = :bandId";
-//           Band band = con.createQuery(venueQuery)
-//             .addParameter("bandId", bandId)
-//             .executeAndFetchFirst(Band.class);
-//           bands.add(band);
-//       }
-//       return bands;
-//     }
-//   }
+  // public void addBand(Band band) {
+  //   try(Connection con = DB.sql2o.open()) {
+  //     String sql = "INSERT INTO bands_venues (band_id, venue_id) VALUES (:band_id, :venue_id)";
+  //     con.createQuery(sql)
+  //       .addParameter("band_id", band.getId())
+  //       .addParameter("venue_id", this.getId())
+  //       .executeUpdate();
+  //   }
+  // }
+
+  // public ArrayList<Band> getBands() {
+  //   try(Connection con = DB.sql2o.open()){
+  //     String sql = "SELECT band_id FROM bands_venues WHERE venue_id = :venue_id";
+  //     List<Integer> bandIds = con.createQuery(sql)
+  //       .addParameter("venue_id", this.getId())
+  //       .executeAndFetch(Integer.class);
+  //
+  //     ArrayList<Band> bands = new ArrayList<Band>();
+  //
+  //     for (Integer bandId : bandIds) {
+  //         String venueQuery = "Select * From bands WHERE id = :bandId";
+  //         Band band = con.createQuery(venueQuery)
+  //           .addParameter("bandId", bandId)
+  //           .executeAndFetchFirst(Band.class);
+  //         bands.add(band);
+  //     }
+  //     return bands;
+  //   }
+  // }
 //
 //   public void delete() {
 //     try(Connection con = DB.sql2o.open()) {

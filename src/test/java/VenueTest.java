@@ -65,7 +65,7 @@ public class VenueTest {
   //   Band savedBand = myVenue.getBands().get(0);
   //   assertTrue(myBand.equals(savedBand));
   // }
-  //
+
   // @Test
   // public void getBands_returnsAllBands_ArrayList() {
   //   Band myBand = new Band("Brand New");

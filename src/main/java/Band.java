@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import org.apache.commons.lang.WordUtils;
 
 public class Band {
-  // private int id;
-  // private String name;
-  //
-  // public int getId() {
-  //   return id;
-  // }
-  //
-  // public String getName() {
-  //   return name;
-  // }
-  //
-  // public Band(String name) {
-  //   this.name = name;
-  // }
-  //
+  private int id;
+  private String name;
+
+  public int getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Band(String name) {
+    this.name = name;
+  }
+
   // public static List<Band> all() {
   //   String sql = "SELECT * FROM bands";
   //   try(Connection con = DB.sql2o.open()) {
