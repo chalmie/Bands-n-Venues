@@ -90,15 +90,15 @@ public class App {
         return null;
       });
 
-  //     get("/venue/:id", (request, response) -> {
-  //       HashMap<String, Object> model = new HashMap<String, Object>();
-  //       int id = Integer.parseInt(request.params("id"));
-  //       Venue myVenue = Venue.find(id);
-  //       model.put("venue", myVenue);
-  //       model.put("template", "templates/venue.vtl");
-  //       model.put("bands", Band.all());
-  //       return new ModelAndView(model, layout);
-  //     }, new VelocityTemplateEngine());
+      get("/venue/:id", (request, response) -> {
+        HashMap<String, Object> model = new HashMap<String, Object>();
+        int id = Integer.parseInt(request.params("id"));
+        Venue myVenue = Venue.find(id);
+        model.put("venue", myVenue);
+        model.put("template", "templates/venue.vtl");
+        model.put("bands", Band.all());
+        return new ModelAndView(model, layout);
+      }, new VelocityTemplateEngine());
   //
   //     post("/venue/update/:id", (request, response) -> {
   //       HashMap<String, Object> model = new HashMap<String, Object>();
