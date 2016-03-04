@@ -74,7 +74,7 @@ public class Band {
     }
   }
 
-  public void deleteAll() {
+  public static void deleteAll() {
     try(Connection con = DB.sql2o.open()) {
       String deleteQuery = "DELETE FROM bands;";
         con.createQuery(deleteQuery)
