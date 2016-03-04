@@ -79,17 +79,17 @@ public class App {
       response.redirect("/");
       return null;
     });
-  
-  //   post("/band/delete/:id", (request, response) -> {
-  //     HashMap<String, Object> model = new HashMap<String, Object>();
-  //     int id = Integer.parseInt(request.params("id"));
-  //     Band myBand = Band.find(id);
-  //     myBand.delete();
-  //     model.put("band", myBand);
-  //       response.redirect("/");
-  //       return null;
-  //     });
-  //
+
+    post("/band/delete/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      int id = Integer.parseInt(request.params("id"));
+      Band myBand = Band.find(id);
+      myBand.delete();
+      model.put("band", myBand);
+        response.redirect("/");
+        return null;
+      });
+
   //     get("/venue/:id", (request, response) -> {
   //       HashMap<String, Object> model = new HashMap<String, Object>();
   //       int id = Integer.parseInt(request.params("id"));
